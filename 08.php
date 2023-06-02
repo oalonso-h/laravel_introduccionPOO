@@ -26,6 +26,10 @@ class Empleado {
     public function getNombre() {
         return $this->nombre;
     }
+
+    public function setNombre( string $nombre) {
+        $this->nombre = $nombre;
+    }
 }
 
 //Cómo settear datos a una instancia de una clase: método 2: usando el constructor
@@ -37,8 +41,12 @@ $oscar = new Empleado(
     "104379"
 );
 
-echo $oscar->getNombre();
+// Acceder a $oscar->nombre da error ya que no podemos acceder a una variable privada desde una instancia de clase.
+// echo $oscar->nombre;
 
 echo "<pre>";
+echo $oscar->getNombre() . "<br>";
+echo $oscar->setNombre("Oscar Alonso");
+echo $oscar->getNombre() . "<br>";
 var_dump($oscar);
 echo "</pre>";
